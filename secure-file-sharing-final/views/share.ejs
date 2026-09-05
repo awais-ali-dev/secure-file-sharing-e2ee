@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Download shared file</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body data-file-id="<%= fileId %>">
+  <div class="card">
+    <h1>Someone shared a file with you</h1>
+    <p class="hint">It will be decrypted in your browser after download — it's never readable by our server.</p>
+
+    <div id="info"><p class="hint">Loading file details…</p></div>
+
+    <button class="btn" id="downloadBtn" disabled>Download & Decrypt</button>
+    <div class="status" id="status"></div>
+  </div>
+
+  <script src="/crypto.js"></script>
+  <script src="/download.js"></script>
+</body>
+</html>

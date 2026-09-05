@@ -1,0 +1,26 @@
+{
+  "name": "secure-file-sharing",
+  "version": "1.0.0",
+  "description": "Secure end-to-end encrypted file sharing portal using AWS S3 presigned URLs. Files are encrypted client-side (AES-256-GCM) before upload; the server and S3 only ever handle ciphertext.",
+  "main": "server.js",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.637.0",
+    "@aws-sdk/s3-request-presigner": "^3.637.0",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-rate-limit": "^8.7.0",
+    "helmet": "^7.1.0",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

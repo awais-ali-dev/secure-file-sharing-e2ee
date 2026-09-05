@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Secure File Share</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="card">
+    <h1>Secure File Share</h1>
+    <p class="hint">
+      Files are encrypted in your browser before upload (AES-256-GCM). The
+      decryption key is embedded only in the share link — our server never
+      sees your file's contents or the key.
+    </p>
+    <form id="uploadForm">
+      <input type="file" id="fileInput" required>
+
+      <label class="hint" for="expiryHours">Link expires after (hours)</label>
+      <input type="number" id="expiryHours" value="72" min="1" max="720" style="width:100%; padding:0.5rem; margin:0.5rem 0; background:#0f172a; border:1px solid #334155; border-radius:6px; color:#e2e8f0;">
+
+      <label class="hint" for="maxDownloads">Max downloads allowed</label>
+      <input type="number" id="maxDownloads" value="5" min="1" max="100" style="width:100%; padding:0.5rem; margin:0.5rem 0 1rem; background:#0f172a; border:1px solid #334155; border-radius:6px; color:#e2e8f0;">
+
+      <button type="submit" class="btn" id="submitBtn">Encrypt & Upload</button>
+    </form>
+
+    <div class="progress-track" id="progressTrack" style="display:none;">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="status" id="status"></div>
+    <div id="result"></div>
+  </div>
+
+  <script src="/crypto.js"></script>
+  <script src="/upload.js"></script>
+</body>
+</html>
